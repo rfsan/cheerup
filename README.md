@@ -1,4 +1,4 @@
-# Quick Smiles
+# Cheer Up
 
 ## TODO
 

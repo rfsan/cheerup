@@ -50,11 +50,11 @@ export default function HomePage() {
   }, [])
 
   return (
-    <main className="flex flex-col items-center justify-center space-y-4 p-4">
+    <main className="mx-auto flex max-w-lg flex-col space-y-4 p-4">
       {post && (
         <>
           <h1 className="text-2xl font-bold">{post.data.title}</h1>
-          <div className="w-full max-w-lg">
+          <div className="w-full">
             <Image
               alt="A dog doing something weird."
               src={post.data.preview.images[0].resolutions[3].url}
