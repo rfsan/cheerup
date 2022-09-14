@@ -17,10 +17,13 @@ const URLs: Record<Category, string[]> = {
 
 export const usePost = () => {
   const [post, setPost] = useState<Post | null>(null)
+  const [loading, setLoading] = useState(false)
 
   const updatePost = (category?: Category) => {
+    setLoading(true)
     category = category ?? sample(categories)!
     const selectedURL = sample(URLs[category])!
+
     fetch(selectedURL)
       .then((response) => response.json() as Promise<RedditJSON>)
       .then((data) => {
@@ -28,6 +31,7 @@ export const usePost = () => {
           (post) => post.data.post_hint === "image"
         )
         setPost(sample(listings)!)
+        setLoading(false)
       })
       .catch(console.log)
   }
@@ -36,5 +40,5 @@ export const usePost = () => {
     updatePost()
   }, [])
 
-  return { post, updatePost }
+  return { post, updatePost, loading }
 }
