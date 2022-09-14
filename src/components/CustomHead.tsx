@@ -30,12 +30,12 @@ export const CustomHead = () => {
       <meta
         key="og:image"
         property="og:image"
-        content="https://rfsan.co/images/banner.jpg"
+        content="https://cheerup.vercel.app/images/banner.jpg"
       />
       <meta
         key="image"
         property="image"
-        content="https://rfsan.co/images/banner.jpg"
+        content="https://cheerup.vercel.app/images/banner.jpg"
       />
       <meta property="og:image:width" content="1200" />
 
