@@ -20,7 +20,14 @@ export default function HomePage() {
               priority
             />
           </div>
-          <button onClick={() => updatePost()}>More</button>
+          <div className="flex justify-center space-x-8 py-8">
+            <button className="text-7xl" onClick={() => updatePost("dogs")}>
+              🐶
+            </button>
+            <button className="text-7xl" onClick={() => updatePost("cats")}>
+              🐱
+            </button>
+          </div>
         </>
       )}
     </main>
