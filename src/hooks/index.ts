@@ -12,7 +12,10 @@ const URLs: Record<Category, string[]> = {
     "https://www.reddit.com/r/corgi/top/.json?limit=30&raw_json=1",
     "https://www.reddit.com/r/Chihuahua/top/.json?limit=30&raw_json=1",
   ],
-  cats: ["https://www.reddit.com/r/catpictures/top/.json?limit=30&raw_json=1"],
+  cats: [
+    "https://www.reddit.com/r/catpictures/top/.json?limit=30&raw_json=1",
+    "https://www.reddit.com/r/MEOW_IRL/top/.json?limit=30&raw_json=1",
+  ],
 }
 
 export const usePost = () => {
@@ -30,7 +33,9 @@ export const usePost = () => {
         const listings = data.data.children.filter(
           (post) => post.data.post_hint === "image"
         )
-        setPost(sample(listings)!)
+        const post = sample(listings)!
+        if (post.data.subreddit === "MEOW_IRL") post.data.title = ""
+        setPost(post)
         setLoading(false)
       })
       .catch(console.log)
