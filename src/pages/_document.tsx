@@ -11,11 +11,11 @@ export default function MyDocument() {
           crossOrigin="true"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap"
           rel="stylesheet"
         />
       </Head>
-      <body className="bg-[#F8EADF]">
+      <body>
         <Main />
         <NextScript />
       </body>
