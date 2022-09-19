@@ -14,6 +14,10 @@ export default function MyDocument() {
           href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap"
           rel="stylesheet"
         />
+        {/* PWA */}
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="apple-touch-icon" href="/icon.png"></link>
+        <meta name="theme-color" content="#fff" />
       </Head>
       <body>
         <Main />
