@@ -25,7 +25,7 @@ export default function HomePage() {
               Made by{" "}
               <a
                 className="underline"
-                href="https://github.com/rfsan"
+                href="https://rfsan.co/"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -48,12 +48,14 @@ const PostCard = ({ className, post }: PostCardTypes) => {
   const {
     title,
     preview: { images },
+    permalink,
   } = post.data
   const image = images[0].resolutions[3] ?? images[0].resolutions.at(-1)
 
   return (
     <div className={className}>
       <h1 className="text-2xl font-bold">{title}</h1>
+
       <div className="mt-4 w-full">
         <Image
           alt="Cute and funny animal."
@@ -65,6 +67,14 @@ const PostCard = ({ className, post }: PostCardTypes) => {
           unoptimized
         />
       </div>
+      <a
+        className="mt-1 block text-right text-[#FF5700]"
+        href={`https://www.reddit.com${permalink}`}
+        target="_blank"
+        rel="noreferrer"
+      >
+        Check on Reddit
+      </a>
     </div>
   )
 }
